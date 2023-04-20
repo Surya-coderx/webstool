@@ -1,0 +1,428 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('pexels-maxime-lecomte-13471115.jpg')  ;
+    background-size: cover;
+    background-position: center;
+
+}
+header {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo{
+    right: 10px;
+    font-size:2em;
+    color: aliceblue;
+    user-select: none;
+}
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform.5s;
+}
+.navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+
+}
+.navigation .know{
+    width: 150px;
+    height: 60px;
+    background:transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+.navigation .know:hover{
+    background: #fff;
+    color: rgb(28, 29, 43);
+}
+.wrap{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 225, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*overflow: hidden;*/
+    transition: height .2s ease;
+
+}
+.wrap.active{
+    height: 520px;
+}
+.wrap .login{
+    color: #58729e;
+    width: 100%;
+    padding: 40px;
+}
+/*.wrap .input-box.login{
+    display:none;
+}*/
+.wrap.active .input-box.login{
+    position: none;
+    transform: translateX(-400px);
+}
+.wrap .form_box.register{
+    position: absolute;
+    transform: translateX(450px);
+}
+.wrap .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #14223b;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.login h2{
+    font-size: 2em;
+    color: #242f42;
+    text-align: center;
+}
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #242f42;
+    margin: 30px 0;
+}
+.input-box label{
+    position: absolute;
+    bottom: 50%;
+    left: 5px;
+    transform: translateY(-60%);
+    font-size: 1em;
+    color: #242f42;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5spx;
+
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+  top: -5px;
+}
+
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background:transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #242f42;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #14223b;
+    line-height: 70px;
+}
+.remeber-me{
+    font-size: .9em;
+    color: #14223b;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remeber-me label input{
+    accent-color: #162938;
+    margin-right: 5px;
+}
+.remeber-me a {
+    color: #162938;
+    text-decoration: none;
+}
+.remeber-me a:hover{
+    text-decoration: underline;
+}
+.logbut{
+    width: 100%;
+    height: 45px;
+    background: #14223b;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+.login-register {
+    font-size: .9em;
+    color: #14223b;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.login-register p a {
+    color: #14223b;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+.login-register p a:hover {
+    text-decoration:underline;
+    
+}
+/*roadmap*/
+.button a {
+    position: relative;
+    margin-top: 40px;
+    width: 170px;
+    height: 100px;
+    background:transparent;
+    backdrop-filter: blur(20px  );
+    border: 2px solid #141618;
+    border-radius: 8px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    text-align: center;
+    text-decoration: none;
+    text-decoration-color:#fff;
+    color: #fff;  
+    display: inline-flex ;
+    font-weight: 500;
+    margin-left: 80px;
+    transition: .5s;
+    
+      }  
+.button a:hover{    
+    background:#fff;
+   color: #58729e
+}
+button a:active {
+    
+        background-color:#14223b;
+}
+.linker a{
+
+    position:relative;
+    top:60px;
+    bottom:80px;
+    width: 250px;
+    height: 80px;
+    margin-top: 40px;
+    margin-left: 80px;
+    background:#14223b;
+    text-decoration: none;
+    backdrop-filter: blur(20px  );
+    border: 2px solid #141618;
+    border-radius: 8px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    text-align: center;
+    color: #fff;
+    display: inline-flex;
+    font-weight: 500;
+    transition: .5s;
+    
+}
+.linker a:hover{
+    background-color: #fff;
+    color: #14223b;
+}
+.linker a:active {
+    
+    background-color:#14223b;
+}
+
+.spn1 {
+    padding: 10px;
+}
+
+.a1{
+    position:relative;
+    top:30;
+}
+.linker abbr{
+    text-decoration:none;
+}
+
+.headdd a{
+
+    position:relative;
+    bottom:80px;
+    width: 250px;
+    height: 100px;
+    margin-top: 40px;
+    margin-left: 80px;
+    background:#14223b;
+    text-decoration: none;
+    backdrop-filter: blur(20px  );
+    border: 2px solid #141618;
+    border-radius: 8px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    text-align: center;
+    color: #fff;
+    display: inline-flex;
+    font-weight: 500;
+    transition: .5s;
+    
+}
+.headdd a:hover{
+    background-color: #fff;
+    color: #14223b;
+}
+.headdd a:active {
+    
+    background-color:#14223b;
+}
+
+
+h1.ups {
+    position: absolute;
+     bottom: 500px;
+     right: 500px;
+     font-size:2em;
+     color: aliceblue;
+     user-select: none;
+  }
+  p.downs{
+   position: absolute;
+   bottom: 500px;
+   right: 500px;
+   font-size:2em;
+   color: aliceblue;
+   user-select: none;
+  }
+  .headdd a{
+   position: relative;
+   margin-top: 70px;
+   width: 170px;
+   height: 100px;
+   background:transparent;
+   backdrop-filter: blur(20px  );
+   border: 2px solid #141618;
+   border-radius: 8px;
+   cursor: pointer;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.1em;
+   text-align: center;
+   text-decoration: none;
+   text-decoration-color:#fff;
+   color: #fff;  
+   display: inline-flex ;
+   font-weight: 500;
+   margin-left: 100px;
+   transition: .5s;
+   
+     }  
+  .headdd a:hover{    
+   background:#fff;
+  color: #58729e
+  }
+  .headdd a:active {
+   
+       background-color:#14223b;
+  }
+.content-table{
+   border-collapse: collapse;
+   margin: 25px 0;
+   font-size: 1.1em;
+   min-width: 650px;
+   border-radius: 5px 5px 0 0;
+}
+content-table th{
+    color:darkslategray;
+    text-align: center;
+    font-weight: bold;
+
+}
+.content-table tr TD{
+    background-color:transparent;
+    color:#141618;
+    text-align: left;
+    font-weight: bold;
+    padding: 12px 12px;
+}
+.know {
+    width: 150px;
+    height: 60px;
+    background-color: #141618;
+    text-decoration: none;
+    background:transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 1200px;
+    transition: .5s;
+}
+ .know:hover{
+    background: #fff;
+    color: rgb(0, 0, 0);
+}
+.know a{
+    color: #14223b;
+
+    text-decoration: none;
+}
+
+
